@@ -1,10 +1,10 @@
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
-import { blogPosts } from '../../lib/data';
+import { getAllPosts, getFeaturedPosts } from '../../lib/blogData';
 
 export default function Blog() {
   // Get featured posts and latest posts
-  const featuredPosts = blogPosts.filter((post) => post.featured).slice(0, 2);
-  const latestPosts = blogPosts.slice(0, 3);
+  const featuredPosts = getFeaturedPosts().slice(0, 2);
+  const latestPosts = getAllPosts().slice(0, 3);
 
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString('en-US', {
