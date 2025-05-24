@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Expertise from './components/Expertise';
 import Innovations from './components/Innovations';
+import Blog from './components/Blog';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -14,6 +15,7 @@ export default function Home() {
       <About />
       <Expertise />
       <Innovations />
+      <Blog />
       <Contact />
       <Footer />
     </div>
