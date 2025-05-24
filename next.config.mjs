@@ -47,7 +47,7 @@ const nextConfig = {
 
   // Experimental features for better performance
   experimental: {
-    optimizeCss: true,
+    optimizeCss: false, // Changed from true to false to fix critters error
     optimizePackageImports: ['lucide-react'],
   },
 };
