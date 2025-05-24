@@ -1,3 +1,4 @@
+'use client'; // Add this at the top
 // app/not-found.js
 import Link from 'next/link';
 import { Home, ArrowLeft } from 'lucide-react';
