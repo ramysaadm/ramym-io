@@ -8,7 +8,7 @@ export const metadata = {
   description:
     'Award-nominated Solution Architect with 10+ years designing enterprise ECM and cloud solutions. Innovation Award Finalist 2025.',
   keywords:
-    'Solution Architect, Enterprise Software, Cloud Architecture, OpenText, ECM, Dubai',
+    'Solution Architect, Enterprise Software, Cloud Architecture, OpenText, ECM, Dubai, AWS, Ramy Mohareb',
   authors: [{ name: 'Ramy Mohareb' }],
   creator: 'Ramy Mohareb',
   openGraph: {
