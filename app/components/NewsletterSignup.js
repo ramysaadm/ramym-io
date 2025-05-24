@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Mail, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 
 export default function NewsletterSignup({
@@ -11,6 +11,12 @@ export default function NewsletterSignup({
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState('idle'); // 'idle', 'loading', 'success', 'error'
   const [message, setMessage] = useState('');
+  const [isClient, setIsClient] = useState(false);
+
+  // Ensure we're on the client side before doing DOM manipulation
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,46 +27,58 @@ export default function NewsletterSignup({
       return;
     }
 
+    // Check if we're on the client side
+    if (!isClient || typeof document === 'undefined') {
+      setStatus('error');
+      setMessage('Please try again in a moment');
+      return;
+    }
+
     setStatus('loading');
     setMessage('');
 
-    // Use a traditional form submission approach that bypasses CORS
-    const form = document.createElement('form');
-    form.action =
-      'https://ramym.us12.list-manage.com/subscribe/post?u=28a898ef8932cae9b4907ef06&id=8228a6509b&f_id=0015e4e0f0';
-    form.method = 'POST';
-    form.target = '_blank'; // Open in new window
-    form.style.display = 'none';
+    try {
+      // Use a traditional form submission approach that bypasses CORS
+      const form = document.createElement('form');
+      form.action =
+        'https://ramym.us12.list-manage.com/subscribe/post?u=28a898ef8932cae9b4907ef06&id=8228a6509b&f_id=0015e4e0f0';
+      form.method = 'POST';
+      form.target = '_blank'; // Open in new window
+      form.style.display = 'none';
 
-    // Email field
-    const emailInput = document.createElement('input');
-    emailInput.type = 'email';
-    emailInput.name = 'EMAIL';
-    emailInput.value = email;
-    form.appendChild(emailInput);
+      // Email field
+      const emailInput = document.createElement('input');
+      emailInput.type = 'email';
+      emailInput.name = 'EMAIL';
+      emailInput.value = email;
+      form.appendChild(emailInput);
 
-    // Anti-bot field
-    const botInput = document.createElement('input');
-    botInput.type = 'text';
-    botInput.name = 'b_28a898ef8932cae9b4907ef06_8228a6509b';
-    botInput.value = '';
-    botInput.style.position = 'absolute';
-    botInput.style.left = '-5000px';
-    form.appendChild(botInput);
+      // Anti-bot field
+      const botInput = document.createElement('input');
+      botInput.type = 'text';
+      botInput.name = 'b_28a898ef8932cae9b4907ef06_8228a6509b';
+      botInput.value = '';
+      botInput.style.position = 'absolute';
+      botInput.style.left = '-5000px';
+      form.appendChild(botInput);
 
-    // Add to page, submit, then remove
-    document.body.appendChild(form);
-    form.submit();
-    document.body.removeChild(form);
+      // Add to page, submit, then remove
+      document.body.appendChild(form);
+      form.submit();
+      document.body.removeChild(form);
 
-    // Show success message
-    setTimeout(() => {
-      setStatus('success');
-      setMessage(
-        'Perfect! A new tab opened to complete your subscription. Please check it and confirm your email.'
-      );
-      setEmail('');
-    }, 500);
+      // Show success message
+      setTimeout(() => {
+        setStatus('success');
+        setMessage(
+          'Perfect! A new tab opened to complete your subscription. Please check it and confirm your email.'
+        );
+        setEmail('');
+      }, 500);
+    } catch (error) {
+      setStatus('error');
+      setMessage('Something went wrong. Please try again.');
+    }
   };
 
   return (
@@ -83,13 +101,13 @@ export default function NewsletterSignup({
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
-            disabled={status === 'loading'}
+            disabled={status === 'loading' || !isClient}
             className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:border-orange-400 focus:outline-none disabled:opacity-50 focus:ring-2 focus:ring-orange-400/50"
             required
           />
           <button
             type="submit"
-            disabled={status === 'loading' || !email}
+            disabled={status === 'loading' || !email || !isClient}
             className="bg-orange-500 hover:bg-orange-600 disabled:bg-orange-500/50 disabled:cursor-not-allowed text-white px-6 py-3 rounded-lg font-semibold transition-all flex items-center justify-center min-w-[120px] shadow-lg hover:shadow-xl"
           >
             {status === 'loading' ? (
@@ -151,7 +169,7 @@ export default function NewsletterSignup({
           <div className="text-orange-400 text-xl mb-2">📈</div>
           <h4 className="font-semibold text-white text-sm">Industry Trends</h4>
           <p className="text-gray-400 text-xs mt-1">
-            Whats coming next in enterprise technology
+            What&apos;s coming next in enterprise technology
           </p>
         </div>
       </div>
