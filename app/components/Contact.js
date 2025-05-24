@@ -80,7 +80,7 @@ export default function Contact() {
           {/* Contact Form */}
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
             <h3 className="text-2xl font-bold mb-6 text-orange-400">
-              Send me a message
+              Request a Demo
             </h3>
 
             {/* Success Message */}
@@ -234,7 +234,7 @@ export default function Contact() {
             {/* Services */}
             <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
               <h3 className="text-xl font-bold mb-4 text-orange-400">
-                Services I Offer
+                Services
               </h3>
               <div className="space-y-4">
                 {services.map((service, index) => (
