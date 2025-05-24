@@ -48,27 +48,15 @@ export const metadata = {
     description:
       'Award-nominated Solution Architect with 10+ years designing enterprise ECM and cloud solutions. Innovation Award Finalist 2025.',
     siteName: 'RamyM.io',
-    images: [
-      {
-        url: 'https://ramym.io/images/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Ramy Mohareb - Senior Solution Architect',
-        type: 'image/jpeg',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Ramy Mohareb - Senior Solution Architect | Innovation Leader',
     description:
       'Innovation Award Finalist 2025 | Enterprise Architecture Expert | AWS & OpenText Specialist',
-    images: ['https://ramym.io/images/og-image.jpg'],
   },
   icons: {
     icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
   },
   manifest: '/manifest.json',
   alternates: {
@@ -100,16 +88,15 @@ export default function RootLayout({ children }) {
         <meta name="geo.position" content="25.2048;55.2708" />
         <meta name="ICBM" content="25.2048, 55.2708" />
 
-        {/* Google Analytics - gtag.js script */}
+        {/* Google Analytics */}
         <Script
-          strategy="afterInteractive" // Recommended strategy for analytics scripts
+          strategy="afterInteractive"
           src={`https://www.googletagmanager.com/gtag/js?id=G-7QKDN8TDB2`}
         />
 
-        {/* Google Analytics - inline initialization script */}
         <Script
-          id="gtag-init" // Add an id for the inline script
-          strategy="afterInteractive" // Recommended strategy for analytics scripts
+          id="gtag-init"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];

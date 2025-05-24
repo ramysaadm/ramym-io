@@ -1,0 +1,20 @@
+{
+  "name": "Ramy Mohareb - Senior Solution Architect",
+  "short_name": "RamyM.io",
+  "description": "Professional portfolio of Ramy Mohareb, Senior Solution Architect and Innovation Leader",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#f97316",
+  "orientation": "portrait-primary",
+  "categories": ["business", "productivity", "professional"],
+  "lang": "en-US",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ]
+}

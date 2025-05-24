@@ -53,3 +53,56 @@ body {
   font-family: 'Inter';
   font-display: swap;
 }
+
+/* Print styles for professional PDF generation */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .bg-gradient-to-br {
+    background: white !important;
+  }
+
+  .text-white {
+    color: black !important;
+  }
+
+  .text-gray-300 {
+    color: #374151 !important;
+  }
+
+  .bg-white\/5,
+  .bg-white\/10 {
+    background: #f9fafb !important;
+    border: 1px solid #e5e7eb !important;
+  }
+
+  nav {
+    display: none !important;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #1e40af, #f97316) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+  }
+
+  section {
+    page-break-inside: avoid;
+    margin-bottom: 2rem;
+  }
+
+  h1,
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
