@@ -31,15 +31,15 @@ export default function About() {
 
             {/* Values */}
             <div className="grid grid-cols-3 gap-4">
-              <div className="bg-white/5 rounded-lg p-4 text-center border border-white/10">
+              <div className="bg-white/5 rounded-lg p-4 text-center border border-white/10 hover:border-orange-400/30 transition-colors">
                 <div className="text-orange-400 text-2xl mb-2">🚀</div>
                 <div className="font-semibold">Innovation</div>
               </div>
-              <div className="bg-white/5 rounded-lg p-4 text-center border border-white/10">
+              <div className="bg-white/5 rounded-lg p-4 text-center border border-white/10 hover:border-orange-400/30 transition-colors">
                 <div className="text-orange-400 text-2xl mb-2">⚡</div>
                 <div className="font-semibold">Excellence</div>
               </div>
-              <div className="bg-white/5 rounded-lg p-4 text-center border border-white/10">
+              <div className="bg-white/5 rounded-lg p-4 text-center border border-white/10 hover:border-orange-400/30 transition-colors">
                 <div className="text-orange-400 text-2xl mb-2">🎯</div>
                 <div className="font-semibold">Strategy</div>
               </div>
@@ -48,17 +48,21 @@ export default function About() {
 
           {/* Right Column - Photo & Timeline */}
           <div className="space-y-8">
-            {/* Professional Photo */}
+            {/* Optimized Professional Photo */}
             <div className="flex justify-center">
               <div className="relative">
                 <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-orange-400/30 shadow-2xl">
                   <Image
                     src="/images/profile.jpg"
-                    alt="Ramy Mohareb - Senior Solution Architect"
+                    alt="Ramy Mohareb - Senior Solution Architect and Innovation Leader"
                     width={256}
                     height={256}
                     className="object-cover w-full h-full"
                     priority
+                    sizes="(max-width: 768px) 200px, 256px"
+                    quality={90}
+                    placeholder="blur"
+                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
                   />
                 </div>
                 {/* Decorative gradient ring */}
@@ -68,7 +72,7 @@ export default function About() {
 
             {/* Career Timeline */}
             <div className="relative">
-              <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-orange-400"></div>
+              <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-400 to-blue-400"></div>
 
               {careerTimeline.map((job, index) => (
                 <div key={index} className="relative mb-8">

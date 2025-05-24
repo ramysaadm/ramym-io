@@ -1,6 +1,7 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
 import StructuredData from './components/StructuredData';
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -99,12 +100,16 @@ export default function RootLayout({ children }) {
         <meta name="geo.position" content="25.2048;55.2708" />
         <meta name="ICBM" content="25.2048, 55.2708" />
 
-        {/* Google Analytics */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-7QKDN8TDB2"
-        ></script>
-        <script
+        {/* Google Analytics - gtag.js script */}
+        <Script
+          strategy="afterInteractive" // Recommended strategy for analytics scripts
+          src={`https://www.googletagmanager.com/gtag/js?id=G-7QKDN8TDB2`}
+        />
+
+        {/* Google Analytics - inline initialization script */}
+        <Script
+          id="gtag-init" // Add an id for the inline script
+          strategy="afterInteractive" // Recommended strategy for analytics scripts
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
