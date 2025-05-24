@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { careerTimeline } from '../../lib/data';
 
 export default function About() {
@@ -9,6 +10,7 @@ export default function About() {
         </h2>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Left Column - Text Content */}
           <div>
             <h3 className="text-2xl font-bold mb-6 text-orange-400">
               From Engineer to Innovation Leader
@@ -44,31 +46,52 @@ export default function About() {
             </div>
           </div>
 
-          {/* Timeline */}
-          <div className="relative">
-            <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-orange-400"></div>
+          {/* Right Column - Photo & Timeline */}
+          <div className="space-y-8">
+            {/* Professional Photo */}
+            <div className="flex justify-center">
+              <div className="relative">
+                <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-orange-400/30 shadow-2xl">
+                  <Image
+                    src="/images/profile.jpg"
+                    alt="Ramy Mohareb - Senior Solution Architect"
+                    width={256}
+                    height={256}
+                    className="object-cover w-full h-full"
+                    priority
+                  />
+                </div>
+                {/* Decorative gradient ring */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/20 to-orange-400/20 -z-10 blur-xl"></div>
+              </div>
+            </div>
 
-            {careerTimeline.map((job, index) => (
-              <div key={index} className="relative mb-8">
-                <div className="flex items-start">
-                  <div className="w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                    <span className="text-white text-sm font-bold">
-                      {index + 1}
-                    </span>
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-bold text-white">
-                      {job.company}
-                    </h4>
-                    <p className="text-orange-400 text-sm">{job.period}</p>
-                    <p className="text-blue-400">{job.role}</p>
-                    <p className="text-gray-300 text-sm mt-1">
-                      {job.highlight}
-                    </p>
+            {/* Career Timeline */}
+            <div className="relative">
+              <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-orange-400"></div>
+
+              {careerTimeline.map((job, index) => (
+                <div key={index} className="relative mb-8">
+                  <div className="flex items-start">
+                    <div className="w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                      <span className="text-white text-sm font-bold">
+                        {index + 1}
+                      </span>
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-white">
+                        {job.company}
+                      </h4>
+                      <p className="text-orange-400 text-sm">{job.period}</p>
+                      <p className="text-blue-400">{job.role}</p>
+                      <p className="text-gray-300 text-sm mt-1">
+                        {job.highlight}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
