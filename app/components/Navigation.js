@@ -6,7 +6,14 @@ import { Menu, X } from 'lucide-react';
 export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navItems = ['Home', 'About', 'Expertise', 'Innovations', 'Contact'];
+  const navItems = [
+    'Home',
+    'About',
+    'Expertise',
+    'Innovations',
+    'Blog',
+    'Contact',
+  ];
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-white/10">
