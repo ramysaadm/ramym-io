@@ -12,11 +12,11 @@ export default function StructuredData() {
         image: {
           '@type': 'ImageObject',
           url: 'https://ramym.io/images/profile.jpg',
-          caption: 'Ramy Mohareb - Senior Solution Architect',
+          caption: 'Ramy Mohareb - Senior Solutions Architect',
         },
         description:
-          'Award-nominated Solution Architect with 10+ years designing enterprise ECM and cloud solutions. Innovation Award Finalist 2025.',
-        jobTitle: 'Senior Solution Architect',
+          'Award-nominated Solutions Architect with 10+ years designing enterprise ECM and cloud solutions. Innovation Award Finalist 2025.',
+        jobTitle: 'Senior Solutions Architect',
         worksFor: {
           '@type': 'Organization',
           name: 'OpenText',
@@ -36,7 +36,7 @@ export default function StructuredData() {
           'Content Management',
           'AWS',
           'OpenText',
-          'Solution Architecture',
+          'Solutions Architecture',
         ],
         award: [
           'Innovation Award Finalist 2025 - OpenText',
@@ -47,9 +47,9 @@ export default function StructuredData() {
         '@type': 'WebSite',
         '@id': 'https://ramym.io/#website',
         url: 'https://ramym.io',
-        name: 'RamyM.io - Solution Architect Portfolio',
+        name: 'RamyM.io - Solutions Architect Portfolio',
         description:
-          'Professional portfolio of Ramy Mohareb, Senior Solution Architect and Innovation Leader',
+          'Professional portfolio of Ramy Mohareb, Senior Solutions Architect and Innovation Leader',
         publisher: {
           '@id': 'https://ramym.io/#person',
         },

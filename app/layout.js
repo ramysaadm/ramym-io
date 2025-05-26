@@ -7,13 +7,13 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: {
-    default: 'Ramy Mohareb - Senior Solution Architect | Innovation Leader',
+    default: 'Ramy Mohareb - Senior Solutions Architect | Innovation Leader',
     template: '%s | Ramy Mohareb',
   },
   description:
-    'Award-nominated Solution Architect with 14+ years designing enterprise ECM and cloud solutions. Innovation Award Finalist 2025. Expert in AWS, OpenText, and digital transformation.',
+    'Award-nominated Solutions Architect with 14+ years designing enterprise ECM and cloud solutions. Innovation Award Finalist 2025. Expert in AWS, OpenText, and digital transformation.',
   keywords: [
-    'Solution Architect',
+    'Solutions Architect',
     'Enterprise Software',
     'Cloud Architecture',
     'OpenText',
@@ -44,14 +44,14 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://ramym.io',
-    title: 'Ramy Mohareb - Senior Solution Architect | Innovation Leader',
+    title: 'Ramy Mohareb - Senior Solutions Architect | Innovation Leader',
     description:
-      'Award-nominated Solution Architect with 10+ years designing enterprise ECM and cloud solutions. Innovation Award Finalist 2025.',
+      'Award-nominated Solutions Architect with 10+ years designing enterprise ECM and cloud solutions. Innovation Award Finalist 2025.',
     siteName: 'RamyM.io',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ramy Mohareb - Senior Solution Architect | Innovation Leader',
+    title: 'Ramy Mohareb - Senior Solutions Architect | Innovation Leader',
     description:
       'Innovation Award Finalist 2025 | Enterprise Architecture Expert | AWS & OpenText Specialist',
   },

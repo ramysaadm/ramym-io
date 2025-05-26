@@ -54,7 +54,7 @@ export default function About() {
                 <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-orange-400/30 shadow-2xl">
                   <Image
                     src="/images/profile.jpg"
-                    alt="Ramy Mohareb - Senior Solution Architect and Innovation Leader"
+                    alt="Ramy Mohareb - Senior Solutions Architect and Innovation Leader"
                     width={256}
                     height={256}
                     className="object-cover w-full h-full"

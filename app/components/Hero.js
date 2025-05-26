@@ -20,8 +20,8 @@ export default function Hero() {
           </div>
 
           <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Award-nominated Solution Architect bridging deep technical execution
-            with high-level business architecture.
+            Award-nominated Solutions Architect bridging deep technical
+            execution with high-level business architecture.
             <span className="text-orange-400 font-semibold">
               {' '}
               Innovation Award Finalist 2025
