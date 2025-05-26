@@ -11,7 +11,7 @@ export const metadata = {
     template: '%s | Ramy Mohareb',
   },
   description:
-    'Award-nominated Solution Architect with 10+ years designing enterprise ECM and cloud solutions. Innovation Award Finalist 2025. Expert in AWS, OpenText, and digital transformation.',
+    'Award-nominated Solution Architect with 14+ years designing enterprise ECM and cloud solutions. Innovation Award Finalist 2025. Expert in AWS, OpenText, and digital transformation.',
   keywords: [
     'Solution Architect',
     'Enterprise Software',
